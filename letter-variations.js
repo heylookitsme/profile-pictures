@@ -28,7 +28,8 @@ function setup() {
   var LEFT_OFFSET = 130;
   var TOP_OFFSET = 50;
   var MAX_DEPTH = 10; 
-  var NUMBER_OF_SNAKES = 200; 
+  var NUMBER_OF_SNAKES = 20; 
+  var grayScaleEnabled = false;
   
   var coords = [
     [20, 230],
@@ -41,37 +42,49 @@ function setup() {
     [150, 250],
     ];
 
-  // Perturb R 
+  var strokes = [
+    "#AEDB95",
+    "#E3D8E9",
+    "#9A4C95",
+    "#003C66",
+    "#D9FFF5",
+    "#AEDB95",
+    "#E3D8E9",
+    "#9A4C95",
+    "#00243D",
+    "#0F1108",
+    "#0F1108"
+  ]
+
+  
   noFill();
   
   for (i = MAX_DEPTH; i > 0; i = i - 1) {
     strokeWeight(10 + i*i*4);
-    stroke(100 + i*10);
+    if (grayScaleEnabled) {
+      stroke(100 + i*10);
+    } else {
+      stroke(strokes[i]);
+    }
     
     beginShape();
     r = random(Math.PI)*2 - 1;
     for (j = 0; j < coords.length; j ++) {
+      // Perturb R 
       t_x = LEFT_OFFSET + coords[j][0] + sin(j + r)*50;
       t_y = TOP_OFFSET + coords[j][1] + cos(j + r)*40;
       curveVertex(t_x, t_y);
     }
     endShape();
     
-  }
-  
-  // draw R 
-  
-  stroke(220);
-  // beginShape();
-  // for (i = 0; i < coords.length; i ++) {
-  //   curveVertex(LEFT_OFFSET + coords[i][0], TOP_OFFSET + coords[i][1]);
-  // }
-  
+    // draw snakes
     for (k = 0; k < NUMBER_OF_SNAKES; k++ ) {
       x = Math.random() * width - width/4;
       y = Math.random() * height - height/4;
       drawSnake(x,y, Math.random()*8 + 3);
     }
+  }
+  
 }
 
 
