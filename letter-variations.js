@@ -7,6 +7,9 @@ function drawSnake(x, y, numSegments) {
   
   lineWeight = Math.random()*20 + 10;
   strokeWeight(lineWeight);
+
+  theta = Math.random()*Math.PI;
+  rotate(theta);
   
   for (i = 0; i < numSegments; i++) {
     yi = (Math.random()*segmentVariation - segmentVariation/2);
@@ -17,8 +20,8 @@ function drawSnake(x, y, numSegments) {
     x1 = xi
   }
   
-  theta = Math.random()*Math.PI*2;
-  rotate(theta);
+  rotate(-theta);
+  
 }
 
 function setup() {
