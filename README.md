@@ -9,11 +9,13 @@ Various profile pictures/imagges of mine created via generative methods. JS scri
   - `drawSnake`: draws the squiggles ("snakes") via random generation 
   - `setup`: contains the drawing 
 
-## Letter Variations
+## Concentric Lines
 `concentric-lines.pde`: in progress. currently has some concentric shape stuff going on in there. 
+![image](https://github.com/heylookitsme/profile-pictures/assets/45301066/f97945ab-1391-446d-acdd-fa8ae6096baf)
 
-## Letter Variations
+## Outlining Arbitrary Curves 
 `outlining arbitrary curves`: nested outline of an arbitrary curve in `r_coords`. 
+![arbitrary-lines](https://github.com/heylookitsme/profile-pictures/assets/45301066/927adb9c-6825-413c-92a6-074f4d31ea98)
 
 
 # What's next?
